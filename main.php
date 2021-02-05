@@ -55,14 +55,14 @@ echo '">';
 html_msgarea(); /* occasional error and info messages on top of the page */
 tpl_includeFile('header.html');
 echo "\n",'        <!-- ********** HEADER ********** -->
-        <div id="dokuwiki__header">
-          <div class="pad">
+	<div id="dokuwiki__header__di"><img src="'.tpl_basedir().'images/bg_DI.jpg"></div>
+	<div id="container">
             <div class="headings">',"\n";
 /* how to insert logo: upload your logo into the data/media folder (root of the media manager) as 'logo.png' */
 if(file_exists(DOKU_INC.'data/media/logo.png') and _tpl_media_isreadable('logo.png')):
   tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />',' accesskey="h" title="[H]"');
 else:
-  tpl_link(wl(),'<img src="'.tpl_basedir().'images/logo.svg" alt="'.$conf['title'].'" style="width: 20em;" />',' accesskey="h" title="[H]"');
+  tpl_link(wl(),'<img src="'.tpl_basedir().'images/ellipse.png" alt="'.$conf['title'].'" />',' accesskey="h" title="[H]"');
 endif;
 echo '                <h1>';
 /* tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"'); */
@@ -74,18 +74,8 @@ echo '                <ul class="a11y skip">
                     <li><a href="#dokuwiki__content">', $lang['skip_to_content'], '</a></li>
                 </ul>
                 <div class="clearer"></div>
-            </div>
+            </div>',"\n";
 
-            <div class="tools">',"\n";
-if($ACT != 'denied'):
-  echo '                <!-- ********** SITE TOOLS ********** -->
-                <div id="dokuwiki__sitetools">
-                    <h3 class="a11y">', $lang['site_tools'], '</h3>',"\n";
-  tpl_searchform();
-  echo '                </div> <!-- #dokuwiki__sitetools -->',"\n";
-endif;
-echo '            </div> <!-- .tools -->
-            <div class="clearer"></div>',"\n";
 
 echo '            <!-- ********** BREADCRUMBS ********** -->
           <div class="breadcrumbs">',"\n";
@@ -105,11 +95,28 @@ if($ACT != 'denied'):
   endif;
 endif;
 echo '</div>',"\n";
-echo '            <div class="clearer"></div>
-            <hr class="a11y" />
-        </div></div><!-- /header -->
 
-        <div class="wrapper">',"\n";
+  echo '      <div class="tools">';
+if($ACT != 'denied'):
+  echo '                <!-- ********** SITE TOOLS ********** -->
+                <div id="dokuwiki__sitetools">
+                    <h3 class="a11y">', $lang['site_tools'], '</h3>',"\n";
+  tpl_searchform();
+  echo '                </div> <!-- #dokuwiki__sitetools -->',"\n";
+endif;
+echo '            </div> <!-- .tools -->',"\n";
+if ($showSidebar):
+  echo '              <!-- ********** SIDEBAR ********** -->
+              <div id="dokuwiki__aside">
+                  <div class="pad aside include group">';
+  tpl_includeFile('sidebarheader.html');
+  tpl_include_page($conf['sidebar'], 1, 1); /* includes the nearest sidebar page */
+  tpl_includeFile('sidebarfooter.html');
+  echo '                    <div class="clearer"></div>
+                </div>
+              </div><!-- /aside -->',"\n";
+endif;
+echo '<!-- /header -->',"\n";
 echo '            <!-- ********** CONTENT ********** -->
             <div id="dokuwiki__content">
               <div class="pad">',"\n";
@@ -124,17 +131,6 @@ echo '                    <!-- wikipage stop -->
 tpl_flush();
 tpl_includeFile('pagefooter.html');
 echo '            </div></div><!-- /content -->',"\n";
-if ($showSidebar):
-  echo '              <!-- ********** SIDEBAR ********** -->
-              <div id="dokuwiki__aside">
-                  <div class="pad aside include group">';
-  tpl_includeFile('sidebarheader.html');
-  tpl_include_page($conf['sidebar'], 1, 1); /* includes the nearest sidebar page */
-  tpl_includeFile('sidebarfooter.html');
-  echo '                    <div class="clearer"></div>
-                </div>
-              </div><!-- /aside -->',"\n";
-endif;
 echo '            <div class="clearer"></div>
             <hr class="a11y" />
 

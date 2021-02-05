@@ -8,6 +8,65 @@
  */
 
 
+/* DI custom styles
+********************************************************************/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#dokuwiki__header__di {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#container {
+  display:grid;
+  grid-template-columns: 25% 1fr 20%;
+  background: var(--color-gray-level-100);
+  margin-top: 20vh;
+}
+.tools {
+  display: grid;
+  justify-items: flex-end;
+  background: white;
+}
+div.breadcrumbs {
+  padding: 1rem 0.5rem 0 1rem;
+  grid-column-start: 2;
+  background: white;
+}
+
+.hasSidebar #dokuwiki__content {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+#dokuwiki__sitetools {
+  padding: 1rem 1rem 0 0;
+}
+
+
+#dokuwiki__content {
+  background: white;
+  padding: 1rem;
+}
+#dokuwiki__site > .site {
+  padding: 0;
+}
+
+.headings {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+.headings > a > img {
+  margin-top: -4rem;
+}
 /* header
 ********************************************************************/
 #dokuwiki__header {
@@ -117,6 +176,9 @@
   overflow: hidden;
   word-wrap: break-word;
   line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  background: #fbfbfb;
 }
 
 /* make sidebar more condensed */
@@ -137,6 +199,7 @@
   margin-bottom: .5714em;
 }
 
+/* GS modified 02/2021 */
 .dokuwiki .aside p,
 .dokuwiki .aside ul,
 .dokuwiki .aside ol,
@@ -147,13 +210,66 @@
 .dokuwiki .aside hr,
 .dokuwiki .aside blockquote,
 .dokuwiki .aside address {
-  margin-bottom: .7em;
+  border-bottom: 1px solid #d9d9d9;
+  margin: 0;
 }
 
+.dokuwiki .aside p {
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  border-left: 7px solid transparent;
+}
+
+.dokuwiki .aside p:hover {
+  border-left: 7px solid #d9d9d9;
+}
 .dokuwiki .aside ul,
 .dokuwiki .aside ol {
-  padding-left: .5em;
+  padding-left: 0rem;
+  list-style-type: none;
 }
+
+.dokuwiki .aside ul > li,
+.dokuwiki .aside ol > li {
+  padding-left: 1.4rem;
+  padding-top: 0rem;
+  margin: 0rem;
+  width: 100%; 
+  border-left: 7px solid transparent;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.dokuwiki .aside ul > li:last-child,
+.dokuwiki .aside ol > li:last-child {
+  border-bottom: 1px solid transparent;
+}
+.dokuwiki .aside ul > li:hover,
+.dokuwiki .aside ol > li:hover {
+  border-left: 7px solid #d9d9d9;
+}
+.dokuwiki .aside ul > li div.li {
+  display: flex;
+  padding: 0.5rem 0;
+}
+.dokuwiki .aside ul > li div.li::after {
+  content: "-";
+  display: flex ;
+  margin-right: 2rem;
+  color: #333;
+  justify-content: center ;
+
+}.dokuwiki .aside span {
+  display: flex;
+  width: 100%;
+}
+
+.dokuwiki .aside  a.wikilink2 {
+  font-size: 1rem;
+  border-bottom: 0;
+  flex-grow: 1;
+  color: #333;
+  outline : none;
+}
+
 [dir=rtl] .dokuwiki .aside ul,
 [dir=rtl] .dokuwiki .aside ol {
   padding-right: .5em;
