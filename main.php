@@ -54,15 +54,17 @@ endif;
 echo '">';
 html_msgarea(); /* occasional error and info messages on top of the page */
 tpl_includeFile('header.html');
+$addSidebarClass = $showSidebar ? "hasSidebar" : null;
 echo "\n",'        <!-- ********** HEADER ********** -->
-	<div id="dokuwiki__header__di"><img src="'.tpl_basedir().'images/bg_DI.jpg"></div>
+	<div id="dokuwiki__header__di"><img class="di-background-header" src="'.tpl_basedir().'images/bg_DI.jpg"></div>
 	<div id="container">
-            <div class="headings">',"\n";
+            <div class="headings '.$addSidebarClass.'">',"\n";
 /* how to insert logo: upload your logo into the data/media folder (root of the media manager) as 'logo.png' */
 if(file_exists(DOKU_INC.'data/media/logo.png') and _tpl_media_isreadable('logo.png')):
   tpl_link(wl(),'<img src="'.ml('logo.png').'" alt="'.$conf['title'].'" />',' accesskey="h" title="[H]"');
 else:
-  tpl_link(wl(),'<img src="'.tpl_basedir().'images/ellipse.png" alt="'.$conf['title'].'" />',' accesskey="h" title="[H]"');
+  
+  tpl_link(wl(),'<img class="di-logo" src="'.tpl_basedir().'images/ellipse.png" alt="'.$conf['title'].'" />',' accesskey="h" title="[H]"');
 endif;
 echo '                <h1>';
 /* tpl_link(wl(),$conf['title'],'accesskey="h" title="[H]"'); */
@@ -161,13 +163,13 @@ echo '        </div><!-- /wrapper -->
         <div id="dokuwiki__footer">
           <div class="pad">
             <div class="doc">';
-tpl_pageinfo(); /* 'Last modified' etc */
+//tpl_pageinfo(); /* 'Last modified' etc */
 if (!empty($_SERVER['REMOTE_USER'])):
   echo '</div><div class="user">';
-  tpl_userinfo();
+  //tpl_userinfo();
 endif;
 echo "</div>","\n";
-tpl_license('button'); /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */
+//tpl_license('button'); /* content license, parameters: img=*badge|button|0, imgonly=*0|1, return=*0|1 */
 echo '        </div>
       </div><!-- /footer -->',"\n";
 tpl_includeFile('footer.html');

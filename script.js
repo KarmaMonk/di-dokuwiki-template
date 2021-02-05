@@ -17,3 +17,14 @@ jQuery(document).ready(function(){
     }
   });
 });
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 120) {
+    document.querySelector(".di-background-header").classList.add("sticky");
+  } else {
+    document.querySelector(".di-background-header").classList.remove("sticky");
+  }
+}
