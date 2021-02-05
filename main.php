@@ -80,14 +80,14 @@ echo '                <ul class="a11y skip">
 echo '            <!-- ********** BREADCRUMBS ********** -->
           <div class="breadcrumbs">',"\n";
 if($ACT != 'denied'):
-  echo '            <!-- ********** MENU ********** -->
+  /*echo '            <!-- ********** MENU ********** -->
               <nav class="mainmenu">
               <input type="checkbox" id="hamburger" class="hamburger" />
               <label for="hamburger" class="hamburger" title="Menu">',
         '<img src="',tpl_basedir(),'images/icon-menu.png"  alt="Menu"> ',
         '<span class="vishelp">Menu</span></label>',"\n";
   _tpl_mainmenu();
-  echo '            </nav>',"\n";
+echo '            </nav>',"\n";*/
   if ($conf['breadcrumbs']):
     tpl_breadcrumbs();
   elseif ($conf['youarehere']):
