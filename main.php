@@ -1,10 +1,12 @@
 <?php
 /**
- * DokuWiki Monochrome Template based on Starter
+ * DokuWiki Digital Ideation Template based on Monochrome Template
  *
  * @link     tbd
  * @author   Anika Henke <anika@selfthinker.org>
  * @author   klaus Vormweg <klaus.vormweg@gmx.de>
+ * @author   Gordan Savicic <gordan.savicic@hslu.ch>
+ * @author   Marc Pilloud <marc.pilloud@hslu.ch>
  * @license  GPL 2 (http://www.gnu.org/licenses/gpl.html)
  *
  * @var string $ID

@@ -1,7 +1,7 @@
-base     monochrome
-author   Klaus Vormweg
-email    klaus.vormweg@gmx.de
-date     2020-07-12
-name     Monochrome Template
-desc     Monochrome wiki template
-url      https://www.vormweg.online/dokuwiki:monochrome
+base     di-dokuwiki-template
+author   Jeannine Kämpfer (Design), Gordan Savicic (CSS), Marc Pilloud (PHP) 
+email    gordan.savicic@hslu.ch, marc.pilloud@hslu.ch
+date     2021-01-08
+name     Digital Ideation Template
+desc     Digital Ideation Wiki Template, based on Monochrome Template von Klaus Vornweg
+url      http://www.omlu.ch/doku.php/di-template
