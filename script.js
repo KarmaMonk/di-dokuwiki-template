@@ -16,51 +16,63 @@ jQuery(document).ready(function(){
       jQuery(this).removeClass("open").addClass("closed");
     }
   });
+});
+
 
   // Collapsible Sidebar
   jQuery("div#dokuwiki__aside  > div > ul > li.level1 > div.li").each(function(i){
     let level1 = jQuery(this).parent("li.level1");
-    let level2 = level1.find("ul > li.level2");
-    level1.addClass("sidebar_"+i);
-    let cookieValue = jQuery.cookie("sidebar_"+i);
-    console.log("sidebar_"+i + " / State: " + cookieValue);
-    if (cookieValue){
-      if (cookieValue === "closed"){
+    let level2 = level1.children("ul");
+    
+    let match = level1[0].className.match(/sidebar_\w+/);
+    if (!match) level1.addClass("sidebar_"+i);
+    let stateCookie = jQuery.cookie("sidebar_"+i);
+    let stateClass = null;
+    if (level1.hasClass("open")) {
+      stateClass = "open";
+    } else if (level1.hasClass("closed")) {
+      stateClass = "closed";
+    } 
+ 
+    console.log("sidebar_"+i + " / " + "Cookie State: " + stateCookie + " Class State: " + stateClass);
+  
+    if ((stateCookie) && (stateCookie !== stateClass)) {
+      if (stateCookie === "closed"){
         level1.addClass("closed");
         level2.hide();
-//        level2.css("display", "none");
-      } else if (cookieValue === "open") {
+      } else if (stateCookie === "open") {
         level1.addClass("open");
-        level2.hide();
-        level2.css("display", "block");      
+        level2.show();      
       }
     } else {
       // default withput cookie
-      level1.addClass("closed");
-      level2.css("display", "none");    
+    //  level1.addClass("closed");
+     // level2.hide();  
     }
   });
 
   jQuery("div#dokuwiki__aside  > div > ul > li.level1 > div.li").click(function(e){
     let state = "";
     let level1 = jQuery(this).parent("li.level1");
-    let level2 = level1.find("ul > li.level2");
+    let level2 = level1.children("ul");
     if(level1.hasClass("open")) {
       level1.removeClass("open").addClass("closed");
-      level2.css("display", "none");
+      level2.hide();
       state = "closed";
     } else {
       level1.removeClass("closed").addClass("open");
-      level2.css("display", "block");
+      level2.show();
       state = "open";
     }
     let match = level1[0].className.match(/sidebar_\w+/);
     if (match) {
-        console.log(match[0] + " / State: " + state);  
+        console.log("Click: " + match[0] + " / State: " + state);  
         jQuery.cookie(match[0], state, {expires: 7, path: DOKU_BASE});
     } 
   });
-});
+
+
+
 
 
 window.onscroll = function() {scrollFunction()};
