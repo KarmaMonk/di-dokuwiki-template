@@ -204,14 +204,20 @@ div.breadcrumbs {
     padding: 0.5rem 0;
 }
 
-.dokuwiki .aside ul>li div.li::after {
-    content: "-";
-    /* FIXME with outliner */
+.dokuwiki .aside ul>li.level1.open > div.li::after {
+    content: url("images/chevron-top.svg");
     display: flex;
     margin-right: 2rem;
     color: #333;
     justify-content: center;
+}
 
+.dokuwiki .aside ul>li.level1.closed > div.li::after {
+    content: url("images/chevron-bottom.svg");
+    display: flex;
+    margin-right: 2rem;
+    color: #333;
+    justify-content: center;
 }
 
 .dokuwiki .aside span {
