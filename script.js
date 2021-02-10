@@ -51,17 +51,22 @@ jQuery(document).ready(function(){
     }
   });
 
+  jQuery("div#dokuwiki__aside  > div > ul > li.level1 > div.li > a").click(function(e){
+    jQuery(this).parent("div.li").data("link-clicked",true); 
+  });
+
   jQuery("div#dokuwiki__aside  > div > ul > li.level1 > div.li").click(function(e){
+    if (jQuery(this).data("link-clicked"))  console.log("link clicked");      
     let state = "";
     let level1 = jQuery(this).parent("li.level1");
     let level2 = level1.children("ul");
     if(level1.hasClass("open")) {
       level1.removeClass("open").addClass("closed");
-      level2.hide();
+      if (!jQuery(this).data("link-clicked")) { level2.hide() };
       state = "closed";
     } else {
       level1.removeClass("closed").addClass("open");
-      level2.show();
+      if (!jQuery(this).data("link-clicked")) { level2.show() };
       state = "open";
     }
     let match = level1[0].className.match(/sidebar_\w+/);
