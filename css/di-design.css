@@ -238,6 +238,12 @@ div.breadcrumbs {
     width: 100%;
 }
 
+
+.dokuwiki .aside a.wikilink2 {
+    flex-grow: 1;
+    width: 100%;
+}
+
 .dokuwiki .aside a.wikilink2 {
     font-size: 1rem;
     border-bottom: 0;
