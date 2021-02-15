@@ -242,6 +242,7 @@ div.breadcrumbs {
     font-size: 1rem;
     border-bottom: 0;
     flex-grow: 1;
+    width: 100%;
     color: var(--color-gray-level-800);
     outline: none;
 }
