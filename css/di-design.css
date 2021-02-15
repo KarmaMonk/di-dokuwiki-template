@@ -126,7 +126,7 @@ div.breadcrumbs {
     line-height: 1.2;
     display: flex;
     flex-direction: column;
-    background: #fbfbfb;
+    background: var(--color-gray-level-100);
 }
 
 /* make sidebar more condensed */
@@ -160,7 +160,7 @@ div.breadcrumbs {
 .dokuwiki .aside hr,
 .dokuwiki .aside blockquote,
 .dokuwiki .aside address {
-    border-bottom: 1px solid #d9d9d9;
+    /* border-bottom: 1px solid var(--color-gray-level-300); */
     margin: 0;
 }
 
@@ -170,7 +170,7 @@ div.breadcrumbs {
 }
 
 .dokuwiki .aside p:hover {
-    border-left: 7px solid #d9d9d9;
+    border-left: 7px solid var(--color-gray-level-300);
 }
 
 .dokuwiki .aside ul,
@@ -179,45 +179,58 @@ div.breadcrumbs {
     list-style-type: none;
 }
 
-.dokuwiki .aside ul>li,
-.dokuwiki .aside ol>li {
+.dokuwiki .aside ul>li.level2 {
     padding-left: 1.4rem;
     padding-top: 0rem;
     margin: 0rem;
     width: 100%;
     border-left: 7px solid transparent;
-    border-bottom: 1px solid #d9d9d9;
 }
 
-.dokuwiki .aside ul>li:last-child,
-.dokuwiki .aside ol>li:last-child {
-    border-bottom: 1px solid transparent;
+
+.dokuwiki .aside li.level1>div.li {
+    padding: 0.5rem 0.2rem;
+    margin: 0rem;
+    width: 100%;
+    border-bottom: 1px solid var(--color-gray-level-300);
+    border-left: 7px solid transparent;
 }
 
-.dokuwiki .aside ul>li:hover,
-.dokuwiki .aside ol>li:hover {
-    border-left: 7px solid #d9d9d9;
+.dokuwiki .aside ul>li.level2:hover {
+    border-left: 7px solid var(--color-gray-level-300);
+}
+
+.dokuwiki .aside li.level1:not(.closed)>div.li:hover {
+    border-left: 7px solid var(--color-gray-level-300);
+}
+
+.dokuwiki .aside ul * li {
+    border-bottom: 1px solid var(--color-gray-level-300);
 }
 
 .dokuwiki .aside ul>li div.li {
     display: flex;
-    padding: 0.5rem 0;
+    padding: .5rem 0;
 }
 
-.dokuwiki .aside ul>li.level1.open > div.li::after {
+.dokuwiki .aside ul>li.level1.open>div.li::after {
     content: url("images/chevron-top.svg");
     display: flex;
-    margin-right: 2rem;
-    color: #333;
+    margin-right: .5rem;
+    color: var(--color-gray-level-800);
     justify-content: center;
 }
 
-.dokuwiki .aside ul>li.level1.closed > div.li::after {
+.dokuwiki .aside ul>li.level1.closed>div.li::after {
     content: url("images/chevron-bottom.svg");
     display: flex;
-    margin-right: 2rem;
-    color: #333;
+    margin-right: .5rem;
+    color: var(--color-gray-level-800);
     justify-content: center;
+}
+
+.dokuwiki .aside ul>li.open>div.li {
+    border-left: 7px solid var(--color-gray-level-300);
 }
 
 .dokuwiki .aside span {
@@ -229,7 +242,7 @@ div.breadcrumbs {
     font-size: 1rem;
     border-bottom: 0;
     flex-grow: 1;
-    color: #333;
+    color: var(--color-gray-level-800);
     outline: none;
 }
 
