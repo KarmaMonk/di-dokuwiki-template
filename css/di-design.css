@@ -19,6 +19,9 @@ a:focus {
     outline: none;
 }
 
+textarea {
+    padding: 0.2rem;
+}
 
 /* Header stuff
 ********************************************************************/
@@ -88,6 +91,7 @@ a:focus {
 div.breadcrumbs {
     padding: 1rem 0.5rem 0 1rem;
     grid-column-start: 2;
+    font-size: 0.8rem;
     background: white;
 }
 
@@ -172,24 +176,32 @@ div.breadcrumbs {
 .dokuwiki .aside p:hover {
     border-left: 7px solid var(--color-gray-level-300);
 }
-
+#dokuwiki__aside > .pad {
+    margin: 0 1.2rem;
+    padding: 0;
+}
 .dokuwiki .aside ul,
 .dokuwiki .aside ol {
     padding-left: 0rem;
     list-style-type: none;
 }
-
+.dokuwiki .aside ul li,
+.dokuwiki .aside ol li {
+    margin: 0;
+}
 .dokuwiki .aside ul>li.level2 {
-    padding-left: 1.4rem;
-    padding-top: 0rem;
+    padding-left: 2.4rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
     margin: 0rem;
     width: 100%;
+    border-bottom: 1px solid var(--color-gray-level-300);
     border-left: 7px solid transparent;
 }
 
-
 .dokuwiki .aside li.level1>div.li {
     padding: 0.5rem 0.2rem;
+    padding-left: 1.5rem;
     margin: 0rem;
     width: 100%;
     border-bottom: 1px solid var(--color-gray-level-300);
@@ -200,7 +212,7 @@ div.breadcrumbs {
     border-left: 7px solid var(--color-gray-level-300);
 }
 
-.dokuwiki .aside li.level1:not(.closed)>div.li:hover {
+.dokuwiki .aside li.level1>div.li:hover {
     border-left: 7px solid var(--color-gray-level-300);
 }
 
@@ -211,6 +223,7 @@ div.breadcrumbs {
 .dokuwiki .aside ul>li div.li {
     display: flex;
     padding: .5rem 0;
+    align-items:center;
 }
 
 .dokuwiki .aside ul>li.level1.open>div.li::after {
@@ -219,6 +232,7 @@ div.breadcrumbs {
     margin-right: .5rem;
     color: var(--color-gray-level-800);
     justify-content: center;
+    transform: scale(.6);
 }
 
 .dokuwiki .aside ul>li.level1.closed>div.li::after {
@@ -227,12 +241,16 @@ div.breadcrumbs {
     margin-right: .5rem;
     color: var(--color-gray-level-800);
     justify-content: center;
+    transform: scale(.6);
 }
 
-.dokuwiki .aside ul>li.open>div.li {
+/* .dokuwiki .aside ul>li.open>div.li {
+    border-left: 7px solid var(--color-gray-level-300);
+} */
+
+.dokuwiki .aside ul>li.active, .dokuwiki .aside li.level1>div.li.active {
     border-left: 7px solid var(--color-gray-level-300);
 }
-
 .dokuwiki .aside span {
     display: flex;
     width: 100%;
