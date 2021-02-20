@@ -176,19 +176,23 @@ div.breadcrumbs {
 .dokuwiki .aside p:hover {
     border-left: 7px solid var(--color-gray-level-300);
 }
-#dokuwiki__aside > .pad {
+
+#dokuwiki__aside>.pad {
     margin: 0 1.2rem;
     padding: 0;
 }
+
 .dokuwiki .aside ul,
 .dokuwiki .aside ol {
     padding-left: 0rem;
     list-style-type: none;
 }
+
 .dokuwiki .aside ul li,
 .dokuwiki .aside ol li {
     margin: 0;
 }
+
 .dokuwiki .aside ul>li.level2 {
     padding-left: 2.4rem;
     padding-top: 0.25rem;
@@ -223,7 +227,7 @@ div.breadcrumbs {
 .dokuwiki .aside ul>li div.li {
     display: flex;
     padding: .5rem 0;
-    align-items:center;
+    align-items: center;
 }
 
 .dokuwiki .aside ul>li.level1.open>div.li::after {
@@ -248,14 +252,24 @@ div.breadcrumbs {
     border-left: 7px solid var(--color-gray-level-300);
 } */
 
-.dokuwiki .aside ul>li.active, .dokuwiki .aside li.level1>div.li.active {
+.dokuwiki .aside ul>li.active,
+.dokuwiki .aside li.level1>div.li.active {
     border-left: 7px solid var(--color-gray-level-300);
 }
+
 .dokuwiki .aside span {
     display: flex;
     width: 100%;
 }
 
+.dokuwiki .aside a,
+.dokuwiki .aside a:link,
+.dokuwiki .aside a:hover,
+.dokuwiki .aside a:visited,
+.dokuwiki .aside a:focus {
+    outline: 0;
+    color: var(--color-gray-level-800);
+}
 
 .dokuwiki .aside a.wikilink1 {
     flex-grow: 1;
