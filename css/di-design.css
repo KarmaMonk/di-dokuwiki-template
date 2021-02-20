@@ -266,8 +266,11 @@ div.breadcrumbs {
 .dokuwiki .aside a:link,
 .dokuwiki .aside a:hover,
 .dokuwiki .aside a:visited,
-.dokuwiki .aside a:focus {
+.dokuwiki .aside a:focus,
+.dokuwiki .aside a.wikilink1:hover,
+.dokuwiki .aside a.wikilink1:focus {
     outline: 0;
+    text-decoration: none;
     color: var(--color-gray-level-800);
 }
 
