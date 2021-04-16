@@ -203,6 +203,11 @@ div.breadcrumbs {
     border-left: 7px solid transparent;
 }
 
+.dokuwiki .aside ul>li.level2  a.wikilink2 {
+    font-size: 0.85rem;
+}
+
+
 .dokuwiki .aside li.level1>div.li {
     padding: 0.5rem 0.2rem;
     padding-left: 1.5rem;
