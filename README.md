@@ -17,12 +17,12 @@ Hamburger menu without JavaScript inspired by Austin Wulf (http://www.sitepoint.
 # Design
 This template is designed following the 
   * Digital Ideation's CI by Lea Steffen and 
-  * Digital Ideation's Web Design Base by Jeannine Kämpfer
+  * Digital Ideation's Web Design Style Guide by Jeannine Kämpfer and Gordan Savicic
 
 
 ## Installation
 
-Unpack the file in the /lib/tpl directory of your Dokuwiki installation. It will create a directory named monochrome there. You can also use the extension manager.
+Unpack the file in the /lib/tpl directory of your Dokuwiki installation. It will create a directory named di-dokuwiki-template there. You can also use the extension manager.
 
 In the configuration plugin chose `di-dokuwiki-template` as your template.
 
@@ -33,3 +33,7 @@ The basic configuration is done via template style settings.
 ## Browser compatibility
 
 This template should work well with all current browsers.
+
+## Dokuwiki Plugin incompatibility
+
+The DI-Dokuwiki-Template does not work with the "Extended List Syntax"-Plugin.
