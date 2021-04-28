@@ -223,14 +223,12 @@ a:link:focus,
 a:visited:focus,
 a:link:active,
 a:visited:active {
-  color: #D742FB;
+  color: var(--color-d-pink);
   text-decoration: none;
 }
-a:link:focus,
-a:visited:focus {
+a:link:focus {
   outline: 1px dotted;
 }
-
 
 /*____________ misc ____________*/
 
