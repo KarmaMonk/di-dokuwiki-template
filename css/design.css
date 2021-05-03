@@ -117,6 +117,9 @@
   width: auto;
 	min-width: 10em;
 	max-width: 20em;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .dokuwiki #dw__toc h3.toggle {
 	font-size: 0.9rem;
