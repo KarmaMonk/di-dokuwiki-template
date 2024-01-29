@@ -284,6 +284,10 @@ div.breadcrumbs {
     width: 100%;
 }
 
+.dokuwiki a.wikilink1 {
+    color: var(--color-d-pink) !important;
+}
+
 .dokuwiki .aside a.wikilink2 {
     font-size: 1rem;
     border-bottom: 0;
