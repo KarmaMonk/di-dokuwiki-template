@@ -98,6 +98,44 @@ jQuery("div#dokuwiki__aside  > div > ul > li.level1 > div.li").click(function (e
     });
   }
 });
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(function () {
+      const tocHeader = document.querySelector('#dw__toc h3');
+      const tocContent = document.querySelector('#dw__toc > div');
+
+      if (tocHeader && tocContent) {
+          console.log('TOC Header:', tocHeader);
+          console.log('TOC Content:', tocContent);
+
+          // Initially hide the TOC content
+          tocContent.style.display = 'none';
+          tocHeader.classList.remove('open');
+          tocHeader.classList.add('closed');
+          if (tocHeader.querySelector('span')) {
+              tocHeader.querySelector('span').textContent = '+';
+
+          }
+
+
+          // Add click event to toggle the TOC
+          tocHeader.addEventListener('click', () => {
+              if (tocContent.style.display === 'none') {
+                  tocContent.style.display = 'block';
+                  tocHeader.classList.remove('closed');
+                  tocHeader.classList.add('open');
+                  tocHeader.querySelector('span').textContent = '−';
+              } else {
+                  tocContent.style.display = 'none';
+                  tocHeader.classList.remove('open');
+                  tocHeader.classList.add('closed');
+                  tocHeader.querySelector('span').textContent = '+';
+              }
+          });
+      } else {
+          console.error('TOC elements not found');
+      }
+  }, 50); 
+});
 
 
 
