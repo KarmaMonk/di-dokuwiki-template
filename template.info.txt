@@ -4,4 +4,4 @@ email    gordan.savicic@hslu.ch, marc.pilloud@hslu.ch
 date     2021-01-08
 name     Digital Ideation Template
 desc     Digital Ideation Wiki Template, based on Monochrome Template von Klaus Vornweg
-url      http://www.omlu.ch/doku.php/di-template
+url      https://github.com/KarmaMonk/di-dokuwiki-template
