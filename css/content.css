@@ -6,7 +6,6 @@
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
  */
 
-
 /*____________ links to wiki pages (addition to _links) ____________*/
 /* existing wikipage */
 .dokuwiki a.wikilink1:link {
@@ -27,16 +26,16 @@
 /*____________ images ____________*/
 /* embedded images (styles are already partly set in DokuWiki's lib/styles/all.css) */
 .dokuwiki img.media {
-  margin: .2em 0;
+  margin: 0.2em 0;
 }
 .dokuwiki img.medialeft {
-  margin: .2em 1.5em .2em 0;
+  margin: 0.2em 1.5em 0.2em 0;
 }
 .dokuwiki img.mediaright {
-  margin: .2em 0 .2em 1.5em;
+  margin: 0.2em 0 0.2em 1.5em;
 }
 .dokuwiki img.mediacenter {
-  margin: .2em auto;
+  margin: 0.2em auto;
 }
 
 /*____________ tables ____________*/
@@ -47,18 +46,18 @@
   min-width: 50%;
 }
 .dokuwiki table.inline tr:hover td {
-  background-color: __background_alt__;
+  background-color: var(--background-alt-color);
 }
 .dokuwiki table.inline tr:hover th {
-  background-color: __border__;
+  background-color: var(--border-color);
 }
 
 /*____________ lists ____________*/
 .dokuwiki ul li {
-  color: __text_neu__;
+  color: var(--text-neu-color);
 }
 .dokuwiki ul li div.li {
-  color: __text__;
+  color: var(--text-color);
 }
 
 /*____________ code ____________*/
@@ -74,16 +73,16 @@
 
 .dokuwiki dl.code dt,
 .dokuwiki dl.file dt {
-  background-color: __background_alt__;
-  border: solid __border__;
+  background-color: var(--background-alt-color);
+  border: solid var(--border-color);
   border-width: 1px 1px 0;
   color: inherit;
   display: inline;
-  padding: .1em .5em .2em;
+  padding: 0.1em 0.5em 0.2em;
   margin-left: 1em;
 }
-[dir=rtl] .dokuwiki dl.code dt,
-[dir=rtl] .dokuwiki dl.file dt {
+[dir="rtl"] .dokuwiki dl.code dt,
+[dir="rtl"] .dokuwiki dl.file dt {
   margin-left: 0;
   margin-right: 1em;
 }
@@ -104,31 +103,32 @@
 /* for code in <file> */
 .dokuwiki pre.file,
 .dokuwiki dl.file pre {
-  border-color: __border__;
+  border-color: var(--border-color);
 }
 
 /* line numbers in file */
-.code .li1, .code .li2, .code.li3 {
+.code .li1,
+.code .li2,
+.code.li3 {
   margin-left: 3em;
 }
-
 
 /*____________ media manager ____________*/
 /* some headings in the media manager should not look like headings */
 #mediamanager__page h2,
 #mediamanager__page h3 {
-  color: __text__;
+  color: var(--text-color);
 }
 
 /* to style button-like div in _fileuploader.css to look like other buttons,
    please add '.qq-upload-button' to the according styles (which don't really exist in this template) */
 .qq-upload-button {
-  border: 1px solid __border__;
+  border: 1px solid var(--border-color);
   border-radius: 3px;
   cursor: pointer;
   overflow: visible;
-  padding: .1em .4em;
-  background-color: __background__;
+  padding: 0.1em 0.4em;
+  background-color: var(--background-color);
   padding: 0.25em 0.75em;
 }
 .qq-upload-button:hover {
@@ -166,32 +166,36 @@ div#admin__version {
   padding: 0.2em 0.4em;
 }
 #wiki__text {
-  font: 100%/1.3 Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
+  font: 100%/1.3 Consolas, "Andale Mono WT", "Andale Mono",
+    "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New",
+    monospace;
   color: __text_alt__;
 }
-#wiki__editbar label[for=minoredit] {
+#wiki__editbar label[for="minoredit"] {
   margin-left: 20.5em;
 }
 
 /*______________ JS popup _______________*/
 .JSpopup {
-  background-color: __background__;
-  color: __text__;
-  border: 1px solid __border__;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
   line-height: 1.2;
-  padding: 0 .2em;
+  padding: 0 0.2em;
 }
 
 .JSpopup ul,
 .JSpopup ol {
   padding-left: 0;
 }
-[dir=rtl] .JSpopup ul,
-[dir=rtl] .JSpopup ol {
+[dir="rtl"] .JSpopup ul,
+[dir="rtl"] .JSpopup ol {
   padding-right: 0;
 }
 
 /*______________ diff page  _______________*/
 .dokuwiki table.diff td {
-  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New", monospace;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono",
+    "Bitstream Vera Sans Mono", "Nimbus Mono L", Monaco, "Courier New",
+    monospace;
 }

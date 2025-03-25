@@ -20,7 +20,7 @@ div.dokuwiki nav.mainmenu > ul {
   margin: 0;
   padding: 0;
   height: auto;
-  border: 1px solid __border__;
+  border: 1px solid var(--border-color);
   margin-top: 5px;
 }
 #dokuwiki__header nav.mainmenu > ul .curid a {
@@ -77,7 +77,8 @@ div.dokuwiki nav.mainmenu ul ul li {
   padding: 0.25em 0;
 }
 
-div.dokuwiki nav.mainmenu ul li.open, div.dokuwiki nav.mainmenu ul ul li.open {
+div.dokuwiki nav.mainmenu ul li.open,
+div.dokuwiki nav.mainmenu ul ul li.open {
   padding-right: 0;
   background-image: none;
 }

@@ -7,7 +7,6 @@
  * @author Klaus Vormweg <klaus.vormweg@gmx.de>
  */
 
-
 /* header
 ********************************************************************/
 #dokuwiki__header {
@@ -33,7 +32,7 @@
 #dokuwiki__header h1 a {
   text-decoration: none;
   background-color: inherit;
-  color: __text_neu__;
+  color: var(--text-neu-color);
 }
 #dokuwiki__header p.claim {
   margin-bottom: 0;
@@ -47,8 +46,8 @@
   margin-bottom: 2.1em;
 }
 #dokuwiki__header .tools ul {
-	margin: 3px 0;
-	font-size: 0.85em;
+  margin: 3px 0;
+  font-size: 0.85em;
 }
 #dokuwiki__header .tools ul li {
   display: block;
@@ -61,7 +60,7 @@
 }
 #dokuwiki__header form.search input#qsearch__in {
   width: 18em;
-  padding: .35em 22px .35em .1em;
+  padding: 0.35em 22px 0.35em 0.1em;
 }
 #dokuwiki__header form.search div#qsearch__out {
   display: none;
@@ -76,10 +75,10 @@
   box-shadow: none;
   padding: 0;
 }
-[dir=rtl] #dokuwiki__header form.search input#qsearch__in {
-  padding: .35em .1em .35em 22px;
+[dir="rtl"] #dokuwiki__header form.search input#qsearch__in {
+  padding: 0.35em 0.1em 0.35em 22px;
 }
-[dir=rtl] #dokuwiki__header form.search button {
+[dir="rtl"] #dokuwiki__header form.search button {
   background-position: 5px 0;
   margin-left: 0;
   margin-right: -20px;
@@ -87,9 +86,9 @@
 }
 
 #dokuwiki__header div.breadcrumbs {
-  background-color: __background_neu__;
+  background-color: var(--background-neu-color);
   padding: 0.2rem 0 0 1rem;
-  color: __text_neu__;
+  color: var(--text-neu-color);
   min-height: 1.5rem;
 }
 #dokuwiki__header div.breadcrumbs a {
@@ -100,7 +99,7 @@
 }
 #dokuwiki__header div.breadcrumbs a:hover,
 #dokuwiki__header div.breadcrumbs a:active,
-#dokuwiki__header div.breadcrumbs a:focus, {
+#dokuwiki__header div.breadcrumbs a:focus {
   color: __rollover__;
 }
 
@@ -115,15 +114,15 @@
 
 .dokuwiki #dw__toc {
   width: auto;
-	min-width: 10em;
-	max-width: 20em;
+  min-width: 10em;
+  max-width: 20em;
   position: absolute;
   right: 0;
   top: 0;
 }
 .dokuwiki #dw__toc h3.toggle {
-	font-size: 0.9rem;
-	margin-bottom: 0;
+  font-size: 0.9rem;
+  margin-bottom: 0;
 }
 .dokuwiki #dw__toc ul {
   font-size: 0.8rem;
@@ -152,19 +151,19 @@
 .dokuwiki .wrapper {
   padding: 1em;
   margin-bottom: 1em;
-  background-color: __background__;
+  background-color: var(--background-color);
 }
 
 /* section editing */
 .dokuwiki div.section_highlight {
   /* negative side margin = side padding + side border */
   margin: 0 -1em;
-  padding: 0 .5em;
-  border: solid __border__;
-  border-width: 0 .5em;
+  padding: 0 0.5em;
+  border: solid var(--border-color);
+  border-width: 0 0.5em;
 }
 .dokuwiki .secedit button {
-	margin: 5px 0;
+  margin: 5px 0;
 }
 
 /* footer
@@ -173,7 +172,7 @@
 #dokuwiki__footer {
   margin-bottom: 1em;
   font-size: 0.8rem;
-  color: __text_neu__;
+  color: var(--text-neu-color);
 }
 
 #dokuwiki__footer .doc {
@@ -187,7 +186,7 @@
   clear: both;
 }
 #dokuwiki__footer .license img {
-  margin: 0 .5em 0 0;
+  margin: 0 0.5em 0 0;
   float: none;
 }
 #dokuwiki__footer a {

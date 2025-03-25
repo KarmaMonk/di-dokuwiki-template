@@ -1,17 +1,48 @@
 :root {
-  --color-gray-level-100: #FBFBFB;
-  --color-gray-level-200: #F8F8F8;
-  --color-gray-level-300: #D9D9D9;
-  --color-gray-level-400: #B6B6B6;
+  --color-gray-level-100: #fbfbfb;
+  --color-gray-level-200: #f8f8f8;
+  --color-gray-level-300: #d9d9d9;
+  --color-gray-level-400: #b6b6b6;
   --color-gray-level-800: #333333;
   --color-gray-level-900: #111111;
 
-  --color-d-pink: #D742FB;
-  --color-d-rosa: #FF87FF;
-  --color-d-lavendel: #B196FF;
-  --color-d-violett: #7C4DFF;
-  --color-i-blue: #84CEFF;
-  --color-i-lightblue: #B2FFFF;
-  --color-i-green: #00FF93;
-  --color-i-neongreen: #94FF57;
+  --color-d-pink: #d742fb;
+  --color-d-rosa: #ff87ff;
+  --color-d-lavendel: #b196ff;
+  --color-d-violett: #7c4dff;
+  --color-i-blue: #84ceff;
+  --color-i-lightblue: #b2ffff;
+  --color-i-green: #00ff93;
+  --color-i-neongreen: #94ff57;
+
+  --text-color: __text__;
+  --background-color: __background__;
+  --text-alt-color: __text_alt__;
+  --background-alt-color: __background_alt__;
+  --text-neu-color: __text_neu__;
+  --background-neu-color: __background_neu__;
+  --border-color: __border__;
+  --highlight-color: __highlight__;
+  --link-color: __link__;
+  --border-dark-color: __borderdark__;
+}
+
+/* Define CSS Variables for Dark Mode */
+.dark-mode {
+  --text-color: #fff;
+  --background-color: #121212;
+  --text-alt-color: #bbb;
+  --background-alt-color: #1e1e1e;
+  --text-neu-color: #ccc;
+  --background-neu-color: #2e2e2e;
+  --border-color: #555;
+  --highlight-color: #ff9;
+  --link-color: #1e90ff;
+
+  --color-gray-level-100: #111111; /* Inverted from #fbfbfb */
+  --color-gray-level-200: #333333; /* Inverted from #f8f8f8 */
+  --color-gray-level-300: #b6b6b6; /* Inverted from #d9d9d9 */
+  --color-gray-level-400: #d9d9d9; /* Inverted from #b6b6b6 */
+  --color-gray-level-800: #f8f8f8; /* Inverted from #333333 */
+  --color-gray-level-900: #fbfbfb; /* Inverted from #111111 */
 }
